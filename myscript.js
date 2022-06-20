@@ -73,6 +73,7 @@ function clickTile(){
                 i++
             console.log(i)
             } 
+            checkWinner()
         })
     })
 }
@@ -100,3 +101,52 @@ function resetGame() {
 
 playRound()
 
+// LOGIC TO CHECK FOR A WINNER
+let tile1 = document.getElementById("cb1");
+let tile2 = document.getElementById("cb2");
+let tile3 = document.getElementById("cb3");
+let tile4 = document.getElementById("cb4");
+let tile5 = document.getElementById("cb5");
+let tile6 = document.getElementById("cb6");
+let tile7 = document.getElementById("cb7");
+let tile8 = document.getElementById("cb8");
+let tile9 = document.getElementById("cb9");
+
+
+
+
+function checkWinner() {
+    if (tile1.textContent === "X" && tile2.textContent === "X" && tile3.textContent === "X") {
+        console.log(`GAME OVER, ${playerName.value} has won.`)
+    } else if (tile4.textContent === "X" && tile5.textContent === "X" && tile6.textContent === "X") {
+        console.log(`GAME OVER, ${playerName.value} has won.`)
+    } else if (tile7.textContent === "X" && tile8.textContent === "X" && tile9.textContent === "X") {
+        console.log(`GAME OVER, ${playerName.value} has won.`)
+    } else if (tile1.textContent === "X" && tile4.textContent === "X" && tile7.textContent === "X") {
+        console.log(`GAME OVER, ${playerName.value} has won.`)
+    } else if (tile2.textContent === "X" && tile5.textContent === "X" && tile8.textContent === "X") {
+        console.log(`GAME OVER, ${playerName.value} has won.`)
+    } else if (tile3.textContent === "X" && tile6.textContent === "X" && tile9.textContent === "X") {
+        console.log(`GAME OVER, ${playerName.value} has won.`)
+    } else if (tile1.textContent === "X" && tile5.textContent === "X" && tile9.textContent === "X") {
+        console.log(`GAME OVER, ${playerName.value} has won.`)
+    } else if (tile3.textContent === "X" && tile5.textContent === "X" && tile7.textContent === "X") {
+        console.log(`GAME OVER, ${playerName.value} has won.`)
+    } else if (tile1.textContent === "O" && tile2.textContent === "O" && tile3.textContent === "O") {
+        console.log(`GAME OVER, ${player2Name.value} has won.`)
+    }else if (tile4.textContent === "O" && tile5.textContent === "O" && tile6.textContent === "O") {
+        console.log(`GAME OVER, ${player2Name.value} has won.`)
+    } else if (tile7.textContent === "O" && tile8.textContent === "O" && tile9.textContent === "O") {
+        console.log(`GAME OVER, ${player2Name.value} has won.`)
+    } else if (tile1.textContent === "O" && tile4.textContent === "O" && tile7.textContent === "O") {
+        console.log(`GAME OVER, ${player2Name.value} has won.`)
+    } else if (tile2.textContent === "O" && tile5.textContent === "O" && tile8.textContent === "O") {
+        console.log(`GAME OVER, ${player2Name.value} has won.`)
+    } else if (tile3.textContent === "O" && tile6.textContent === "O" && tile9.textContent === "O") {
+        console.log(`GAME OVER, ${player2Name.value} has won.`)
+    } else if (tile1.textContent === "O" && tile5.textContent === "O" && tile9.textContent === "O") {
+        console.log(`GAME OVER, ${player2Name.value} has won.`)
+    } else if (tile3.textContent === "O" && tile5.textContent === "O" && tile7.textContent === "O") {
+        console.log(`GAME OVER, ${player2Name.value} has won.`)
+    }
+}
