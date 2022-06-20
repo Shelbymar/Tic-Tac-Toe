@@ -8,8 +8,12 @@
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-    <h1>Tic-Tac-Toe</h1>
-    <h4>*Please open console before playing*</h4>
+
+    <div class="message-container">
+        <h1>Tic-Tac-Toe</h1>
+        <h3 id="message-box"></h3>
+
+    </div>
 
     <div id="form-container">
      <h3>New Player</h3>
@@ -21,6 +25,14 @@
      </form>
      <button id="submitButton" onclick="createPlayers()" type="button">Submit</button>
     </div>
+
+    <div class="player-Box">
+        <h2 id="player1mes"></h2>
+        <h2 id="player2mes"></h2>
+    </div>
+
+    
+
    <div class="container-bottom">
       <div class="board">
         <div class='tile' id="cb1"></div>
@@ -33,10 +45,10 @@
         <div class='tile' id="cb8"></div>
         <div class='tile' id="cb9"></div>
        </div>
-   </div>
-    <button onclick=clearBoard() id="clearBoard">CLEAR BOARD</button>
-    <button onclick=resetGame() id="resetGame">RESET GAME</button>
-
+   
+        <button onclick=clearBoard() id="clearBoard">CLEAR BOARD</button>
+        <button onclick=resetGame() id="resetGame">RESET GAME</button>
+    </div>
 
 
 

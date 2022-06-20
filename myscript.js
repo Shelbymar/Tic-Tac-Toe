@@ -4,11 +4,15 @@ const tiles = document.querySelectorAll('.tile')
 const playerName = document.getElementById('playerName')
 const player2Name = document.getElementById('player2Name')
 const submitButton = document.getElementById('submitButton')
+let messageBox = document.getElementById('message-box')
+let nameBox1 = document.getElementById('player1mes')
+let nameBox2 = document.getElementById('player2mes')
+let winBox = document.createElement('div')
 let myPlayers = []
 
 //start message
 function startMessage() {
-    console.log('Please enter your names and press submit to begin the game.')
+    messageBox.textContent = 'Please enter your names and press submit to begin the game.'
 }
 
 //function to clear the board
@@ -46,9 +50,9 @@ function createPlayers() {
     myPlayers.push(playerTwo)    
 
     //game starting message
-    console.log(`Player One: ${player1}`)
-    console.log(`Player Two: ${player2}`)
-    console.log(`${player1} will go first, please select your first tile to begin!`)
+    nameBox1.textContent = `Player One: ${player1}`
+    nameBox2.textContent = `Player Two: ${player2}`
+    messageBox.textContent = `${player1} will go first, please select your first tile to begin!`
 }
 
 let i = 0
@@ -58,8 +62,10 @@ function clickTile(){
     tiles.forEach(tile => {
         tile.addEventListener('click', () => {
             if (i >= 9) {
-                console.log('GAME OVER')
-            } //logic to prevent clicking on an already clicked tile
+               winBox.classList.add('win-box')
+               document.body.append(winBox)
+               winBox.textContent = 'GAME OVER its a tie!'
+                        } //logic to prevent clicking on an already clicked tile
             else if (tile.textContent === 'O' || tile.textContent === 'X') {
                 i = i
             }
@@ -82,9 +88,6 @@ function clickTile(){
 function playRound() {
     startMessage()
     clickTile()
-    if(i > 9) {
-        console.log('GAME OVER')
-    }
 }
 
 
@@ -96,6 +99,9 @@ function resetGame() {
         tile.textContent = ''
         i = 0
     })
+    nameBox1.textContent = ''
+    nameBox2.textContent = ''
+    winBox.remove()
     playRound()
 }
 
@@ -117,36 +123,68 @@ let tile9 = document.getElementById("cb9");
 
 function checkWinner() {
     if (tile1.textContent === "X" && tile2.textContent === "X" && tile3.textContent === "X") {
-        console.log(`GAME OVER, ${playerName.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${playerName.value} has won.`
     } else if (tile4.textContent === "X" && tile5.textContent === "X" && tile6.textContent === "X") {
-        console.log(`GAME OVER, ${playerName.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${playerName.value} has won.`
     } else if (tile7.textContent === "X" && tile8.textContent === "X" && tile9.textContent === "X") {
-        console.log(`GAME OVER, ${playerName.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${playerName.value} has won.`
     } else if (tile1.textContent === "X" && tile4.textContent === "X" && tile7.textContent === "X") {
-        console.log(`GAME OVER, ${playerName.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${playerName.value} has won.`
     } else if (tile2.textContent === "X" && tile5.textContent === "X" && tile8.textContent === "X") {
-        console.log(`GAME OVER, ${playerName.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${playerName.value} has won.`
     } else if (tile3.textContent === "X" && tile6.textContent === "X" && tile9.textContent === "X") {
-        console.log(`GAME OVER, ${playerName.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${playerName.value} has won.`
     } else if (tile1.textContent === "X" && tile5.textContent === "X" && tile9.textContent === "X") {
-        console.log(`GAME OVER, ${playerName.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${playerName.value} has won.`
     } else if (tile3.textContent === "X" && tile5.textContent === "X" && tile7.textContent === "X") {
-        console.log(`GAME OVER, ${playerName.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${playerName.value} has won.`
     } else if (tile1.textContent === "O" && tile2.textContent === "O" && tile3.textContent === "O") {
-        console.log(`GAME OVER, ${player2Name.value} has won.`)
-    }else if (tile4.textContent === "O" && tile5.textContent === "O" && tile6.textContent === "O") {
-        console.log(`GAME OVER, ${player2Name.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${player2Name.value} has won.`  
+    } else if (tile4.textContent === "O" && tile5.textContent === "O" && tile6.textContent === "O") {
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${player2Name.value} has won.`
     } else if (tile7.textContent === "O" && tile8.textContent === "O" && tile9.textContent === "O") {
-        console.log(`GAME OVER, ${player2Name.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${player2Name.value} has won.`
     } else if (tile1.textContent === "O" && tile4.textContent === "O" && tile7.textContent === "O") {
-        console.log(`GAME OVER, ${player2Name.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${player2Name.value} has won.`
     } else if (tile2.textContent === "O" && tile5.textContent === "O" && tile8.textContent === "O") {
-        console.log(`GAME OVER, ${player2Name.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${player2Name.value} has won.`
     } else if (tile3.textContent === "O" && tile6.textContent === "O" && tile9.textContent === "O") {
-        console.log(`GAME OVER, ${player2Name.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${player2Name.value} has won.`
     } else if (tile1.textContent === "O" && tile5.textContent === "O" && tile9.textContent === "O") {
-        console.log(`GAME OVER, ${player2Name.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${player2Name.value} has won.`
     } else if (tile3.textContent === "O" && tile5.textContent === "O" && tile7.textContent === "O") {
-        console.log(`GAME OVER, ${player2Name.value} has won.`)
+        winBox.classList.add('win-box')
+        document.body.append(winBox)
+        winBox.textContent =`GAME OVER, ${player2Name.value} has won.`
     }
 }
