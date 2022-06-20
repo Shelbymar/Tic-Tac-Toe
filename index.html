@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <h1>Tic-Tac-Toe</h1>
+    <h4>*Please open console before playing*</h4>
+
+    <div id="form-container">
+     <h3>New Player</h3>
+     <form id="form">
+        <label for="playerName">Player 1 Name:</label>
+        <input id="playerName" type="text">
+        <label for="player2Name">Player 2 Name:</label>
+        <input id="player2Name" type="text">
+     </form>
+     <button id="submitButton" onclick="createPlayers()" type="button">Submit</button>
+    </div>
+
+    <div class="board">
+        <div class='tile' id="cb1"></div>
+        <div class='tile' id="cb2"></div>
+        <div class='tile' id="cb3"></div>
+        <div class='tile' id="cb4"></div>
+        <div class='tile' id="cb5"></div>
+        <div class='tile' id="cb6"></div>
+        <div class='tile' id="cb7"></div>
+        <div class='tile' id="cb8"></div>
+        <div class='tile' id="cb9"></div>
+    </div>
+    <button onclick=clearBoard() id="clearBoard">CLEAR BOARD</button>
+    <button onclick=resetGame() id="resetGame">RESET GAME</button>
+
+
+
+
+<script src="myscript.js"></script>
+</body>
+</html>

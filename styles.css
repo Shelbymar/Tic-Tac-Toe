@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(251, 240, 226);
+}
+
+.board {
+    background-image: url(https://etc.usf.edu/clipart/80200/80254/80254_grid_3_3_lg.gif);
+    width: 320px;
+    height: 320px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-size: cover;
+    border: 3px solid black;
+}
+
+.board div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board div:hover {
+    background-color: rgb(233, 246, 255);
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#form-container {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    gap: 20px;
+    width: 180px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+#clearBoard {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
